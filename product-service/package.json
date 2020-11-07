@@ -1,6 +1,6 @@
 {
   "name": "product-service",
-  "version": "1.0.0",
+  "version": "0.4.0",
   "description": "Serverless webpack example using Typescript",
   "main": "handler.js",
   "scripts": {
@@ -8,7 +8,10 @@
   },
   "dependencies": {
     "aws-lambda": "^1.0.6",
-    "source-map-support": "^0.5.10"
+    "pg": "^8.4.2",
+    "serverless-event-body-option": "^1.2.0",
+    "source-map-support": "^0.5.10",
+    "yup": "^0.29.3"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",

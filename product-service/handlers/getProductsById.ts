@@ -1,22 +1,32 @@
-import {APIGatewayProxyHandler} from "aws-lambda"
+import {APIGatewayProxyHandler} from 'aws-lambda'
+import { Client } from 'pg'
 
-import { getProductById } from "../service/productsService"
-import { toSuccess, toError } from "./response"
+import { toSuccess, toError } from './response'
+import { dbOptions } from './dbOprions'
+import { selectProductByIdQuery } from './queries/products'
 
 export const getProductsById: APIGatewayProxyHandler = async (event, _context) => {
     const { pathParameters } = event
     const { productId } = pathParameters
+
+    console.log('Incoming Event', { event, pathParameters, _context })
+
+    if (!productId) {
+        return toError('Not found')
+    }
     
+    const client = new Client(dbOptions) 
     try {
-        if (!productId) {
+        await client.connect()
+        const { rows: products } = await client.query(selectProductByIdQuery, [productId])
+        
+        if (products.length === 0) {
             throw new Error('Not found')
         }
-        const product = await getProductById(productId)
-        if (!product) {
-            return toError('Not found')
-        }
-        return toSuccess(product)
+        return toSuccess(products[0])
     } catch {
-        return toError('Not found')
+        return toError('Server Error', { statusCode: 500 })
+    } finally {
+        client.end()
     }
 }
