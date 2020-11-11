@@ -27,7 +27,7 @@ export const products = [
     },
     {
         "count": 47,
-        "description": "Explore what React, Node, TypeScript, Webpack, and Docker have to offer individually, and how they all fit together in modern app development. ",
+        "description": "Explore what React, Node, TypeScript, Webpack, and Docker have to offer individually, and how they all fit together in modern app development.",
         "id": "7567ec4b-b10c-48c5-9345-fc73c48a80a2",
         "price": 24.27,
         "title": "Modern Full-Stack Development: Using TypeScript, React, Node.js, Webpack, and Docker",

@@ -6,6 +6,7 @@ serverless create --template aws-nodejs --path product-service
 
 ##### Debug
 serverless invoke local --function getProductsList
+serverless invoke local --function createProduct --path ./mocks/createProductEvent.json
 
 ##### Deploy
 cd product-service

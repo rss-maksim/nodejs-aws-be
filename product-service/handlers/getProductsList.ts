@@ -1,13 +1,21 @@
-import { APIGatewayProxyHandler } from "aws-lambda"
+import { APIGatewayProxyHandler } from 'aws-lambda'
+import { Client } from 'pg'
 
-import { getProducts } from "../service/productsService"
-import { toSuccess, toError } from "./response"
+import { toSuccess, toError } from './response'
+import { dbOptions } from './dbOprions'
+import { selectProductsQuery } from './queries/products'
 
-export const getProductsList: APIGatewayProxyHandler = async () => {
+export const getProductsList: APIGatewayProxyHandler = async (event) => {
+    console.log('Incoming Event', event)
+    
+    const client = new Client(dbOptions) 
     try {
-        const products = await getProducts()
+        await client.connect()
+        const { rows: products } = await client.query(selectProductsQuery)
         return toSuccess(products)
     } catch {
-        return toError('Bad request', { statusCode: 400 })
+        return toError('Server Error', { statusCode: 500 })
+    } finally {
+        client.end()
     }
 }
