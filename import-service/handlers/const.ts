@@ -1,0 +1,1 @@
+export const Bucket = 'rss-book-store-bucket'
