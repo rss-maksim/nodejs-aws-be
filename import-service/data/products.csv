@@ -1,2 +1,3 @@
-Node.js Design Patterns,12,49.99, "Learn proven patterns, techniques, and tricks"
-Node.js Web Development,23, 29.99, "Build scalable web applications using Node.js"
+title,count,price,description,cover_url
+Node.js Design Patterns,12,49.99,"Learn proven patterns, techniques, and tricks",https://m.media-amazon.com/images/I/51t1O0CHE2L._SX260_.jpg
+Node.js Web Development,23,29.99,Build scalable web applications using Node.js,https://m.media-amazon.com/images/I/71kELzE9FKL._AC_UY436_FMwebp_QL65_.jpg

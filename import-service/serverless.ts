@@ -28,10 +28,14 @@ const serverlessConfiguration: Serverless = {
     },
     environment: {
       AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1',
+      SQS_URL: {
+        "Fn::ImportValue": "SQSQueueUrl",
+      }
     },
     iamRoleStatements: [
       { Effect: 'Allow', Action: 's3:ListBucket', Resource: ['arn:aws:s3:::rss-book-store-bucket']},
-      { Effect: 'Allow', Action: 's3:*', Resource: ['arn:aws:s3:::rss-book-store-bucket/*']}
+      { Effect: 'Allow', Action: 's3:*', Resource: ['arn:aws:s3:::rss-book-store-bucket/*']},
+      { Effect: 'Allow', Action: 'sqs:*', Resource: ["${cf:product-service-${self:provider.stage}.SQSQueueArn}"]}
     ]
   },
   functions: {

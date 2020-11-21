@@ -8,7 +8,9 @@
   },
   "dependencies": {
     "aws-lambda": "^1.0.6",
+    "aws-sdk": "^2.797.0",
     "pg": "^8.4.2",
+    "pg-format": "^1.0.4",
     "serverless-event-body-option": "^1.2.0",
     "source-map-support": "^0.5.10",
     "yup": "^0.29.3"
@@ -25,6 +27,8 @@
     "babel-loader": "^8.1.0",
     "fork-ts-checker-webpack-plugin": "^3.0.1",
     "jest": "^26.6.1",
+    "prettier": "^2.2.0",
+    "serverless-dotenv-plugin": "^3.1.0",
     "serverless-webpack": "^5.2.0",
     "ts-loader": "^5.3.3",
     "ts-node": "^8.10.2",

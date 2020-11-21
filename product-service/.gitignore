@@ -4,10 +4,11 @@ jspm_packages
 
 # Serverless directories
 .serverless
-serverless.ts
 
 # Webpack directories
 .webpack
 
 /.idea
 .vscode
+
+.env
