@@ -1,5 +1,5 @@
 import { getProductsById } from './getProductsById'
-import { toSuccess, toError } from './response'
+import { toSuccess, toError } from '../../core/response'
 
 const productMock = {
     count: 46,

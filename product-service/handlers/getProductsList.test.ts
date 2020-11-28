@@ -1,6 +1,6 @@
 import { getProductsList } from './getProductsList'
 import { products } from '../service/products'
-import { toSuccess } from './response';
+import { toSuccess } from '../../core/response';
 
 describe('getProductsList tests', () => {
     test('should return products list', async () => {

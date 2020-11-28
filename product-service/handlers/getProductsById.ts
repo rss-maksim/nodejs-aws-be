@@ -1,7 +1,7 @@
 import {APIGatewayProxyHandler} from 'aws-lambda'
 import { Client } from 'pg'
 
-import { toSuccess, toError } from './response'
+import { toSuccess, toError } from '../../core/response'
 import { dbOptions } from './dbOprions'
 import { selectProductByIdQuery } from './queries/products'
 
