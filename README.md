@@ -2,7 +2,7 @@
 
 ##### Create service
 serverless create --template aws-nodejs-typescript --path product-shop-service
-serverless create --template aws-nodejs --path product-service
+<!-- serverless create --template aws-nodejs --path product-service -->
 
 ##### Debug
 serverless invoke local --function getProductsList
