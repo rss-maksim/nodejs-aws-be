@@ -96,19 +96,19 @@ const serverlessConfiguration: Serverless = {
   },
   resources: {
     Resources: {
-      // GatewayResponseDefault4XX: {
-      //   Type: 'AWS::ApiGateway::GatewayResponse',
-      //   Properties: {
-      //     ResponseParameters: {
-      //       'gatewayresponse.header.Access-Control-Allow-Origin': "'*'",
-      //       'gatewayresponse.header.Access-Control-Allow-Methods': "'GET,OPTIONS'"
-      //     },
-      //     ResponseType: 'DEFAULT_4XX',
-      //     RestApiId: {
-      //       Ref: 'ApiGatewayRestApi'
-      //     }
-      //   }
-      // },
+      GatewayResponseDefault4XX: {
+        Type: 'AWS::ApiGateway::GatewayResponse',
+        Properties: {
+          ResponseParameters: {
+            'gatewayresponse.header.Access-Control-Allow-Origin': "'*'",
+            'gatewayresponse.header.Access-Control-Allow-Methods': "'GET,OPTIONS'"
+          },
+          ResponseType: 'DEFAULT_4XX',
+          RestApiId: {
+            Ref: 'ApiGatewayRestApi'
+          }
+        }
+      },
       GatewayResponseAccessDenied: {
         Type: 'AWS::ApiGateway::GatewayResponse',
         Properties: {
